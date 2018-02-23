@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PediatricianEntity extends BaseEntity{
-    private static String DEFAULT_SQL= "SELECT * FROM abbyp.pediatrician";
+    private static String DEFAULT_SQL= "SELECT * FROM pediatrician";
     private List<Pediatrician> findByCriteria(String sql){
         List<Pediatrician> pediatricians;
         if (getConnection() !=null){
@@ -17,10 +17,10 @@ public class PediatricianEntity extends BaseEntity{
                             .executeQuery(sql);
                     while (resultSet.next()){
                         Pediatrician pediatrician = new Pediatrician()
-                                .setId(resultSet.getInt("pediatrician_id"))
-                                .setName(resultSet.getString("pediatrician_name"))
-                                .setLastname(resultSet.getString("pediatrician_lastname"))
-                                .setAge(resultSet.getInt("pediatrician_age"));
+                                .setId(resultSet.getInt("id"))
+                                .setName(resultSet.getString("first_name"))
+                                .setLastname(resultSet.getString("last_name"))
+                                .setPhone(resultSet.getString("phone"));
                         pediatricians.add(pediatrician);
                     }
                     return pediatricians;
