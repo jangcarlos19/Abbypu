@@ -4,7 +4,7 @@ public class Pediatrician {
     private int id;
     private String name;
     private String lastname;
-    private int age;
+    private String phone;
 
     public Pediatrician() {
     }
@@ -13,7 +13,7 @@ public class Pediatrician {
         this.id = id;
         this.name = name;
         this.lastname = lastname;
-        this.age = age;
+        this.phone = phone;
     }
 
 
@@ -45,11 +45,11 @@ public class Pediatrician {
     }
 
     public int getAge() {
-        return age;
+        return phone;
     }
 
-    public Pediatrician setAge(int age) {
-        this.age = age;
+    public Pediatrician setAge(String phone) {
+        this.phone = phone;
         return this;
     }
 }
