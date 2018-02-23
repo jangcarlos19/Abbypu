@@ -16,7 +16,6 @@ public class Pediatrician {
         this.age = age;
     }
 
-
     public int getId() {
         return id;
     }
