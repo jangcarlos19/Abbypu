@@ -4,7 +4,7 @@ import java.sql.Connection;
 
 public class BaseEntity {
     private Connection connection;
-    Connection getConnection(){
+    public Connection getConnection(){
         return connection;
     }
     private void setConnection(Connection connection){

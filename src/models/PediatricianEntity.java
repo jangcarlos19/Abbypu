@@ -18,9 +18,11 @@ public class PediatricianEntity extends BaseEntity{
                     while (resultSet.next()){
                         Pediatrician pediatrician = new Pediatrician()
                                 .setId(resultSet.getInt("id"))
-                                .setName(resultSet.getString("first_name"))
-                                .setLastname(resultSet.getString("last_name"))
-                                .setPhone(resultSet.getString("phone"));
+                                .setName(resultSet.getString("name"))
+                                .setLastname(resultSet.getString("lastname"))
+                                .setCountry(resultSet.getString("country"))
+                                .setPhone(resultSet.getInt("phone"))
+                                .setEmail(resultSet.getString("email"));
                         pediatricians.add(pediatrician);
                     }
                     return pediatricians;
@@ -35,12 +37,12 @@ public class PediatricianEntity extends BaseEntity{
         }
 
         public Pediatrician findById(int id){
-        List<Pediatrician> pediatricians = findByCriteria(DEFAULT_SQL + " WHERE pediatrician_id = "+ String.valueOf(id));
+        List<Pediatrician> pediatricians = findByCriteria(DEFAULT_SQL + " WHERE id = "+ String.valueOf(id));
         return (pediatricians != null ? pediatricians.get(0) : null);
     }
 
         public  Pediatrician findByName(String name){
-        List<Pediatrician> pediatricians = findByCriteria(DEFAULT_SQL + " WHERE pediatrician_name = '" + name + "'");
+        List<Pediatrician> pediatricians = findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
         return (pediatricians !=null ? pediatricians.get(0) : null);
         }
 
@@ -57,7 +59,7 @@ public class PediatricianEntity extends BaseEntity{
             return 0;
         }
         public  boolean delete(int id){
-        return  updateByCriteria("DELETE FROM pediatricians " + "WHERE pediatrician_id = " + String.valueOf(id)) >0;
+        return  updateByCriteria("DELETE FROM pediatricians " + "WHERE id = " + String.valueOf(id)) >0;
         }
 
     private int getMaxId() {
@@ -79,15 +81,15 @@ public class PediatricianEntity extends BaseEntity{
         return 0;
     }
 
-    public Pediatrician create(String name, String lastname, int age) {
+    public Pediatrician create(String name, String lastname, String country, int phone, String email) {
         if(findByName(name) == null) {
             if(getConnection() != null) {
-                String sql = "INSERT INTO pediatrician(pediatrician_id, pediatrician_name) VALUES(" +
+                String sql = "INSERT INTO pediatrician(id, name, lastname, country, phone, email) VALUES(" +
                         String.valueOf(getMaxId() + 1) + ", '" +
                         name + "')";
                 int results = updateByCriteria(sql);
                 if(results > 0) {
-                    Pediatrician pediatrician = new Pediatrician(getMaxId(), name, lastname, age);
+                    Pediatrician pediatrician = new Pediatrician(getMaxId(), name, lastname, country, phone, email);
                     //eroor
                     return pediatrician;
                 }
@@ -98,9 +100,9 @@ public class PediatricianEntity extends BaseEntity{
     public boolean update(Pediatrician region) {
         if(findByName(region.getName()) != null) return false;
         return updateByCriteria(
-                "UPDATE regions SET region_name = '" +
+                "UPDATE pediatrician SET name = '" +
                         region.getName() + "'" +
-                        " WHERE region_id = " +
+                        " WHERE id = " +
                         String.valueOf(region.getId())) > 0;
     }
 }
