@@ -8,7 +8,7 @@ public class Pediatrician {
     private int phone;
     private String email;
 
-    public Pediatrician(String id, String name, String lastname, int score, Pediatrician byId) {
+    public Pediatrician() {
     }
 
     public Pediatrician(int id, String name, String lastname, String country, int phone, String email) {
@@ -18,6 +18,10 @@ public class Pediatrician {
         this.country = country;
         this.phone = phone;
         this.email = email;
+    }
+
+    public Pediatrician(String id, String name, String lastname, int score, Pediatrician id1) {
+
     }
 
     public int getId() {

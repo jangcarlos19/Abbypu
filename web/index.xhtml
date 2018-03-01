@@ -3,9 +3,78 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-   <f:view>
-      <h:outputLabel value="Hello, world"/>
-   </f:view>
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://java.sun.com/jsf/html">
+<h:head>
+   <title>ABBYP</title>
+   <meta name="author" content="The Author"></meta>
+</h:head>
+<!-- Add 50px padding top to the body for the navbar -->
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+   <b:navBar brand="ABBYP" brandHref="index.xhtml" inverse="true" fixed="top">
+      <b:navbarLinks>
+         <b:navLink value="Consultas" href="questions.xhtml"></b:navLink>
+         <b:navLink value="Citas" href="quotes.xhtml"></b:navLink>
+         <b:dropMenu value="Ayuda">
+            <b:navLink value="Reporta una queja" href="#"></b:navLink>
+            <b:navLink value="Envianos una recomendacion" href="#"></b:navLink>
+            <b:navLink></b:navLink>
+            <b:navLink header="Transparencia:"></b:navLink>
+            <b:navLink value="Desarrolladores" href="#"></b:navLink>
+            <b:navLink value="Acerca de ABBYP" href="#"></b:navLink>
+         </b:dropMenu>
+      </b:navbarLinks>
+      <h:form styleClass="navbar-form navbar-right">
+         <div class="form-group">
+            <b:inputText placeholder="Correo Electronico" fieldSize="sm"/>
+            <!--input type="text" class="form-control" placeholder="Search"/-->
+         </div>
+         <div class="form-group">
+            <b:inputText placeholder="Contraseña" fieldSize="sm"/>
+         </div>
+         #{' '}
+         <b:commandButton action="a" value="Iniciar Sesion" look="success" icon="chevron-right" iconAlign="right"/>
+      </h:form>
+   </b:navBar>
+   <b:jumbotron>
+      <b:container>
+         <h1>ABBYP</h1>
+         <p>Esta es una aplicacion creada con el fin de brindar ayuda a los padres primerizos. Ofreciendoles
+            basicas, pero muy importantes, funcionalidades de asesoria y consulta con profesionales en
+            pediatria. Los cuales estarán disponibles las 24hr del dia para atender cada uno de los servicios
+            ofrecidos.
+         </p>
+         <p>
+            <a href="emergencies.xhtml">Emergencias »</a>
+         </p>
+      </b:container>
+   </b:jumbotron>
+   <b:container>
+      <b:row>
+         <b:column col-md="4">
+            <h2>Consultas</h2>
+            <p>Publica una consulta sobre la salud o recomendacion al cuidado de tu bebe, y uno de nuestros
+               pediatras te responderá. Entra aqui para Preguntar. </p>
+            <p><b:button value="Ver detalles »" href="questions.xhtml"/></p>
+         </b:column>
+         <b:column col-md="4">
+            <h2>Citas</h2>
+            <p>Reserva una cita medica presencial con uno de nuestros pediatras, nuestra aplicacion se encargara
+               de recomendarte los mas cercanos a tu domicilio. Entra aqui para Reservar. </p>
+            <p><b:button value="Ver detalles »" href="quotes.xhtml"/></p>
+         </b:column>
+         <b:column col-md="4">
+            <h2>Emergencias</h2>
+            <p>Solicita una visita de urgencia para la atencion de tu bebe. Puedes optar por ir al consultorio
+               más cercano, o recibir la visita del pediatra disponible mas cercano a tu ubicacion actual.
+               Entra aqui para Solicitar. </p>
+            <p><b:button value="Ver detalles »" href="emergencies.xhtml"/></p>
+         </b:column>
+      </b:row>
+      <hr/>
+      <footer>
+         <p>© UTP - Alumnos 2018</p>
+      </footer>
+   </b:container>
+</h:body>
 </html>

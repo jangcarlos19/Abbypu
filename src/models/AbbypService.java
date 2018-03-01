@@ -71,9 +71,9 @@ public class AbbypService {
                 getPediatricianEntity().findByName(name) : null;
     }
 
-    public  Pediatrician createPediatrician (String name) {
+    public  Pediatrician createPediatrician (String name, String lastname, String country, int phone, String email) {
         return getPediatricianEntity() != null ?
-                getPediatricianEntity().create(name) : null;
+                getPediatricianEntity().create(name, lastname, country, phone, email) : null;
     }
 
     public boolean deletePediatrician(int id) {

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class QuestionEntity extends BaseEntity{
     private static String DEFAULT_SQL = "SELECT * FROM pediatricians";
-    private List<Pediatrician> findByCriteria(String sql, PediatricianEntity pediatricianEntity){
+    private List<Question> findByCriteria(String sql, PediatricianEntity pediatricianEntity){
         List<Pediatrician> pediatricians = new ArrayList<>();
         if (getConnection() != null) {
                 try {

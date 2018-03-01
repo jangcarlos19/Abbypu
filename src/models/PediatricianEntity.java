@@ -81,7 +81,7 @@ public class PediatricianEntity extends BaseEntity{
         return 0;
     }
 
-    public Pediatrician create(String name) {
+    public Pediatrician create(String name, String lastname, String country, int phone, String email) {
         if(findByName(name) == null) {
             if(getConnection() != null) {
                 String sql = "INSERT INTO pediatrician(id, name, lastname, country, phone, email) VALUES(" +
