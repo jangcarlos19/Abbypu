@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://java.sun.com/jsf/html">
+<h:head>
+    <title>ABBYP</title>
+    <meta name="author" content="The Author"></meta>
+</h:head>
+<!-- Add 50px padding top to the body for the navbar -->
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+    <b:navBar brand="ABBYP" brandHref="index.xhtml" inverse="true" fixed="top">
+        <b:navbarLinks>
+            <b:navLink value="Consultas" href="questions.xhtml"></b:navLink>
+            <b:navLink value="Citas" href="quotes.xhtml"></b:navLink>
+            <b:dropMenu value="Ayuda">
+                <b:navLink value="Reporta una queja" href="#"></b:navLink>
+                <b:navLink value="Envianos una recomendacion" href="#"></b:navLink>
+                <b:navLink></b:navLink>
+                <b:navLink header="Transparencia:"></b:navLink>
+                <b:navLink value="Desarrolladores" href="#"></b:navLink>
+                <b:navLink value="Acerca de ABBYP" href="#"></b:navLink>
+            </b:dropMenu>
+        </b:navbarLinks>
+    </b:navBar>
+    <b:jumbotron>
+        <b:container>
+            <b:form>
+                <b:inputText id="name" fieldId="nombre" name="nombre"
+                             value="#{PediatricianBean.name}"
+                             label="Nombre" />
+                <b:message for="@previous" />
+                <b:inputText id="lastname" fieldId="apellido" name="apellido"
+                             value="#{PediatricianBean.lastname}"
+                             label="Apellido" />
+                <b:message for="@previous" />
+                <b:inputText id="email" fieldId="email" name="email"
+                             value="#{PediatricianBean.email}"
+                             label="E-mail" />
+                <b:message for="@previous" />
+                <b:inputSecret id="passwordDiv" fieldId="password" name="password"
+                               value="#{PediatricianBean.password}"
+                               label="Contraseña"  />
+                <b:message for="passwordDiv" />
+                <b:inputText id="country" fieldId="ciudad" name="ciudad"
+                             value="#{PediatricianBean.country}"
+                             label="Ciudad" />
+                <b:message for="@previous" />
+                <b:inputText id="phone" fieldId="telefono" name="telefono"
+                             value="#{PediatricianBean.phone}"
+                             label="Telefono" />
+                <b:message for="@previous" />
+                <b:inputText id="dni" fieldId="dni" name="dni"
+                             value="#{PediatricianBean.dni}"
+                             label="Dni" />
+                <b:message for="@previous" />
+                <b:inputText id="cmp" fieldId="cmp" name="cmp"
+                             value="#{PediatricianBean.cmp}"
+                             label="Cmp" />
+                <b:message for="@previous" />
+                <b:commandButton update="@form" value="Registrar Pediatra" onclick="ajax:loginBean.login2()"/>
+                #{' '}
+                <b:commandButton update="@form" value="Registrar Paciente" onclick="ajax:loginBean.login2()"/>
+            </b:form>
+        </b:container>
+    </b:jumbotron>
+        <footer>
+            <p>© UTP - Alumnos 2018</p>
+        </footer>
+</h:body>
+</html>
