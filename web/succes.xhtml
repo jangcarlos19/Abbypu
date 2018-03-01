@@ -14,7 +14,7 @@
     <b:navBar brand="ABBYP" brandHref="index.xhtml" inverse="true" fixed="top">
         <b:navbarLinks>
             <b:navLink value="#{login.name}" href="questions.xhtml"></b:navLink>
-            <b:navLink value="listaped" href="listped.xhtml"></b:navLink>
+            <b:navLink value="Consultas" href="qUser.xhtml"></b:navLink>
             <b:navLink value="Citas" href="quotes.xhtml"></b:navLink>
         </b:navbarLinks>
     </b:navBar>
@@ -31,10 +31,11 @@
                         <th colspan="2">Technical Data</th>
                     </tr>
                     <tr>
-                        <th>Color</th>
-                        <th>Year</th>
-                        <th>Price</th>
-                        <th>Power</th>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Calificacion</th>
+                        <th>Agregar</th>
                     </tr>
                 </f:facet>
                 <b:dataTableColumn value="#{pediatrician.name}" />

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>ABBYP</title>
+    <meta name="author" content="The Author"></meta>
+</h:head>
+<!-- Add 50px padding top to the body for the navbar -->
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+    <b:navBar brand="ABBYP" brandHref="index.xhtml" inverse="true" fixed="top">
+        <b:navbarLinks>
+            <b:navLink value="#{login.name}" href="questions.xhtml"></b:navLink>
+            <b:navLink value="Connsultas" href="qUser.xhtml"></b:navLink>
+            <b:navLink value="Citas" href="quotes.xhtml"></b:navLink>
+        </b:navbarLinks>
+    </b:navBar>
+    <b:jumbotron>
+    <b:container>
+    <h:form>
+        <b:dataTable value="#{PediatricianBean.pediatrician}" var="pediatrician" class="editableCarTable">
+            <b:dataTableColumn value="#{pediatrician.nombre}" />
+            <b:dataTableColumn value="#{pediatrician.apellidos}" />
+            <b:dataTableColumn value="#{pediatrician.puntaje}" order="asc" />
+            <b:dataTableColumn>
+                <b:commandButton value="Editar" icon="Editar" ajax="true" update="@(.ediableCarTable)"
+                                 onclick="ajax:car.agregar()" >
+                </b:commandButton>
+            </b:dataTableColumn>
+            <b:dataTableColumn>
+                <b:commandButton value="Eliminar" icon="Eliminar" ajax="true" update="@(.eliminetbleCarTable)"
+                                 onclick="ajax:car.eliminar()" >
+                </b:commandButton>
+            </b:dataTableColumn>
+        </b:dataTable>
+    </h:form>
+    </b:container>
+    </b:jumbotron>
+</h:body>
+</html>

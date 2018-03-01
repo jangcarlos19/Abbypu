@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>ABBYP</title>
+    <meta name="author" content="The Author"></meta>
+</h:head>
+<!-- Add 50px padding top to the body for the navbar -->
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+    <b:navBar brand="ABBYP" brandHref="index.xhtml" inverse="true" fixed="top">
+        <b:navbarLinks>
+            <b:navLink value="#{login.name}" href="questions.xhtml"></b:navLink>
+            <b:navLink value="Responder" href="qAnswer.xhtml"></b:navLink>
+            <b:navLink value="Agenda" href="qAnswer.xhtml"></b:navLink>
+        </b:navbarLinks>
+    </b:navBar>
+</h:body>
+<b:fullCalendar />
+</html>
