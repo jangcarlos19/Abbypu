@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>ABBYP</title>
+    <meta name="author" content="The Author"></meta>
+</h:head>
+<!-- Add 50px padding top to the body for the navbar -->
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+    <b:navBar brand="ABBYP" brandHref="index.xhtml" inverse="true" fixed="top">
+        <b:navbarLinks>
+            <b:navLink value="#{login.name}" href="questions.xhtml"></b:navLink>
+            <b:navLink value="Lista" href="quotes.xhtml"></b:navLink>
+            <b:navLink value="Preguntas" href="quotes.xhtml"></b:navLink>
+            <b:navLink value="Citas" href="quotes.xhtml"></b:navLink>
+        </b:navbarLinks>
+    </b:navBar>
+    <h:form>
+        <b:dataTable value="#{carPool.carPool}"
+                     var="car"
+                     page-length="5"
+                     page-length-menu="5,10,20">
+            <f:facet name="header">
+                <tr>
+                    <th colspan="2" rowspan="2">Car</th>
+                    <th colspan="2">Appearance</th>
+                    <th colspan="2">Technical Data</th>
+                </tr>
+                <tr>
+                    <th>Color</th>
+                    <th>Year</th>
+                    <th>Price</th>
+                    <th>Power</th>
+                </tr>
+            </f:facet>
+            <b:dataTableColumn value="#{car.brand}" />
+            <b:dataTableColumn value="#{car.type}" />
+            <b:dataTableColumn value="#{car.color}" />
+            <b:dataTableColumn value="#{car.year}"  order="asc" />
+            <b:dataTableColumn value="#{car.price}" />
+            <b:dataTableColumn value="#{car.enginePower}"/>
+        </b:dataTable>
+    </h:form>
+</h:body>
+</html>

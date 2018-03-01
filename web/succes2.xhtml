@@ -13,31 +13,10 @@
 <h:body style="padding-top: 50px; padding-bottom: 20px;">
     <b:navBar brand="ABBYP" brandHref="index.xhtml" inverse="true" fixed="top">
         <b:navbarLinks>
-            <b:navLink value="Consultas" href="questions.xhtml"></b:navLink>
-            <b:navLink value="Citas" href="quotes.xhtml"></b:navLink>
-            <b:dropMenu value="Ayuda">
-                <b:navLink value="Reporta una queja" href="#"></b:navLink>
-                <b:navLink value="Envianos una recomendacion" href="#"></b:navLink>
-                <b:navLink></b:navLink>
-                <b:navLink header="Transparencia:"></b:navLink>
-                <b:navLink value="Desarrolladores" href="#"></b:navLink>
-                <b:navLink value="Acerca de ABBYP" href="#"></b:navLink>
-            </b:dropMenu>
+            <b:navLink value="#{login.name}"></b:navLink>
+            <b:navLink value="Consultas" href="quotes.xhtml"></b:navLink>
+            <b:navLink value="Responder" href="quotes.xhtml"></b:navLink>
         </b:navbarLinks>
-        <h:form styleClass="navbar-form navbar-right">
-            <div class="form-group">
-                <b:inputText value="#{login.name}" placeholder="Nombre" fieldSize="sm"/>
-                <!--input type="text" class="form-control" placeholder="Search"/-->
-            </div>
-            <div class="form-group">
-                <b:inputText value="#{login.password}" placeholder="Contraseña" fieldSize="sm"/>
-            </div>
-            #{' '}
-            <b:commandButton  action="#{login.login}" value="Iniciar Sesion" look="success" icon="chevron-right" iconAlign="right"/>
-            #{' '}
-            <!--_________________________________________________________________/-->
-            <b:commandButton action="createcount.xhtml" value="Crear una cuenta" look="success" icon="chevron-right" iconAlign="right"/>
-        </h:form>
     </b:navBar>
     <b:jumbotron>
         <b:container>
@@ -55,15 +34,10 @@
     <b:container>
         <b:row>
             <b:column col-md="4">
-                <div class="thumbnail">
-                <b:image text="Query" value="C:\imagens\Query.jpg" class="img-circle" tooltipPosition="middle"/>
-                <div class="caption">
-                <h3>Consultas</h3>
+                <h2>Consultas</h2>
                 <p>Publica una consulta sobre la salud o recomendacion al cuidado de tu bebe, y uno de nuestros
                     pediatras te responderá. Entra aqui para Preguntar. </p>
                 <p><b:button value="Ver detalles »" href="questions.xhtml"/></p>
-                </div>
-                </div>
             </b:column>
             <b:column col-md="4">
                 <h2>Citas</h2>
@@ -80,6 +54,9 @@
             </b:column>
         </b:row>
         <hr/>
+        <footer>
+            <p>© UTP - Alumnos 2018</p>
+        </footer>
     </b:container>
 </h:body>
 </html>
