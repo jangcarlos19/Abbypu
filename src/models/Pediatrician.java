@@ -8,7 +8,7 @@ public class Pediatrician {
     private int phone;
     private String email;
 
-    public Pediatrician() {
+    public Pediatrician(String id, String name, String lastname, int score, Pediatrician byId) {
     }
 
     public Pediatrician(int id, String name, String lastname, String country, int phone, String email) {

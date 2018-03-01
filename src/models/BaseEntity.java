@@ -7,7 +7,7 @@ public class BaseEntity {
     public Connection getConnection(){
         return connection;
     }
-    private void setConnection(Connection connection){
+    void setConnection(Connection connection){
         this.connection = connection;
     }
 }
