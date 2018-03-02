@@ -25,14 +25,17 @@
         </b:navbarLinks>
         <h:form styleClass="navbar-form navbar-right">
             <div class="form-group">
-                <b:inputText placeholder="Correo Electronico" fieldSize="sm"/>
+                <b:inputText value="#{login.name}" placeholder="Nombre" fieldSize="sm"/>
                 <!--input type="text" class="form-control" placeholder="Search"/-->
             </div>
             <div class="form-group">
-                <b:inputText placeholder="Contraseña" fieldSize="sm"/>
+                <b:inputText value="#{login.password}" placeholder="Contraseña" fieldSize="sm"/>
             </div>
             #{' '}
-            <b:commandButton action="a" value="Iniciar Sesion" look="success" icon="chevron-right" iconAlign="right"/>
+            <b:commandButton  action="#{login.login}" value="Iniciar Sesion" look="success" icon="chevron-right" iconAlign="right"/>
+            #{' '}
+            <!--_________________________________________________________________/-->
+            <b:commandButton action="createcount.xhtml" value="Crear una cuenta" look="success" icon="chevron-right" iconAlign="right"/>
         </h:form>
     </b:navBar>
     <b:jumbotron>

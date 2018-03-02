@@ -12,16 +12,9 @@
 <h:body style="padding-top: 50px; padding-bottom: 20px;">
     <b:navBar brand="ABBYP" brandHref="index.xhtml" inverse="true" fixed="top">
         <b:navbarLinks>
-            <b:navLink value="Consultas" href="questions.xhtml"></b:navLink>
-            <b:navLink value="Citas" href="quotes.xhtml"></b:navLink>
-            <b:dropMenu value="Ayuda">
-                <b:navLink value="Reporta una queja" href="#"></b:navLink>
-                <b:navLink value="Envianos una recomendacion" href="#"></b:navLink>
-                <b:navLink></b:navLink>
-                <b:navLink header="Transparencia:"></b:navLink>
-                <b:navLink value="Desarrolladores" href="#"></b:navLink>
-                <b:navLink value="Acerca de ABBYP" href="#"></b:navLink>
-            </b:dropMenu>
+            <b:navLink value="#{login.name}" href="profile_pediatrician.xhtml"></b:navLink>
+            <b:navLink value="Responder" href="qAnswer.xhtml"></b:navLink>
+            <b:navLink value="Agenda" href="calendarP.xhtml"></b:navLink>
         </b:navbarLinks>
         <h:form styleClass="navbar-form navbar-right">
             <div class="form-group">

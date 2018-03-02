@@ -18,7 +18,7 @@ public class AbbypService {
         if (connection == null) {
                 try {
                     connection = ((DataSource) InitialContext
-                        .doLookup("jdbc/MySQLDataSource"))
+                        .doLookup("jdbc/MySQLDataSourcAbbyp"))
                             .getConnection();
                 } catch (NamingException | SQLException e) {
                     e.printStackTrace();
